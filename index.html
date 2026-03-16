@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futuro Sustentável</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav id="navbar">
+            <div class="menu-cores">
+                <span>Curiosidades:</span>
+                <button onclick="mudarCor('#D4EDDA', 'A reciclagem de 1 lata de alumínio economiza energia para uma TV ligada por 3 horas!')" style="background: #D4EDDA;"></button>
+                <button onclick="mudarCor('#E3F2FD', 'O Brasil possui a matriz energética mais renovável do mundo industrializado.')" style="background: #E3F2FD;"></button>
+                <button onclick="mudarCor('#FFF3CD', '80% do lixo marinho é composto por plástico.')" style="background: #FFF3CD;"></button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="planeta-container">
+            <div id="terra" onclick="expandirTerra()">
+                <img src="https://cdn-icons-png.flaticon.com/512/814/814513.png" alt="Planeta Terra" id="img-terra">
+                <div id="paises" class="escondido">
+                    <button onclick="mostrarSustentabilidade('Brasil', '78%')">Brasil</button>
+                    <button onclick="mostrarSustentabilidade('Suécia', '99%')">Suécia</button>
+                    <button onclick="mostrarSustentabilidade('Japão', '65%')">Japão</button>
+                </div>
+            </div>
+            <p id="info-pais">Clique no Planeta para explorar!</p>
+        </section>
+
+        <section class="conteudo">
+            <h1>Como ser Sustentável?</h1>
+            <h2>Pequenas mudanças no 3º ano para o resto da vida</h2>
+            
+            <div class="slide-texto">
+                <h3>O que é Sustentabilidade?</h3>
+                <ul>
+                    <li>Atender às necessidades do presente...</li>
+                    <li>Sem comprometer as futuras gerações.</li>
+                    <li>Baseado no tripé: Social, Econômico e Ambiental.</li>
+                </ul>
+            </div>
+            
+            </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
