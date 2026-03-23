@@ -1,71 +1,101 @@
-/* Definições de cores e fontes */
+/* Cores e Fontes */
+:root {
+    --verde-claro: #90EE90;
+    --off-white: #FAF9F6;
+    --azul-claro: #ADD8E6;
+    --dark: #2f3e46;
+}
+
 body {
     margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #F8F9FA; /* Off-White */
-    transition: background-color 0.5s ease; /* Efeito suave ao mudar cor */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--off-white);
+    color: var(--dark);
+    transition: background 0.5s ease;
 }
 
-/* Menu Superior */
+/* Menu */
 header {
-    background: #fff;
-    padding: 15px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    background: white;
+    padding: 1rem;
     position: sticky;
     top: 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
 }
 
-.menu-cores {
+.nav-links {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links li {
+    cursor: pointer;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    background: #f0f0f0;
+}
+
+/* Planeta Interativo */
+#container-planeta {
+    display: flex;
+    justify-content: center;
+    padding: 50px 0;
+}
+
+#planeta {
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle at 30% 30%, #4facfe 0%, #00f2fe 100%);
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
-.menu-cores button {
-    width: 25px;
-    height: 25px;
+/* Classe quando o planeta cresce */
+#planeta.expandido {
+    width: 250px;
+    height: 250px;
+}
+
+.pais {
+    width: 15px;
+    height: 15px;
+    background: rgba(255, 255, 255, 0.8);
     border-radius: 50%;
-    border: 1px solid #ccc;
-    cursor: pointer;
+    position: absolute;
+    display: none; /* Escondido até o planeta crescer */
 }
 
-/* O Planeta Terra */
-#planeta-container {
+#planeta.expandido .pais {
+    display: block;
+}
+
+/* Layout de Conteúdo */
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    border-left: 5px solid var(--verde-claro);
+}
+
+#instrucao {
+    font-size: 10px;
+    color: white;
     text-align: center;
-    padding: 50px 20px;
-}
-
-#img-terra {
-    width: 80px; /* Começa pequeno */
-    cursor: pointer;
-    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-/* Quando o planeta crescer */
-.terra-grande {
-    width: 200px !important;
-}
-
-/* Botões dos Países */
-#paises {
-    margin-top: 20px;
-}
-
-.escondido { display: none; }
-
-#paises button {
-    background: #E3F2FD; /* Azul Claro */
-    border: none;
-    padding: 8px 15px;
-    margin: 5px;
-    border-radius: 20px;
-    cursor: pointer;
-}
-
-/* Responsividade (Para Tablet e Mobile) */
-@media (max-width: 768px) {
-    h1 { font-size: 1.5rem; }
-    .slide-texto { padding: 10px; }
 }

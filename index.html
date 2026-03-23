@@ -3,49 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Futuro Sustentável</title>
+    <title>Futuro Sustentável - Algoritmo do Equilíbrio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
         <nav id="navbar">
-            <div class="menu-cores">
-                <span>Curiosidades:</span>
-                <button onclick="mudarCor('#D4EDDA', 'A reciclagem de 1 lata de alumínio economiza energia para uma TV ligada por 3 horas!')" style="background: #D4EDDA;"></button>
-                <button onclick="mudarCor('#E3F2FD', 'O Brasil possui a matriz energética mais renovável do mundo industrializado.')" style="background: #E3F2FD;"></button>
-                <button onclick="mudarCor('#FFF3CD', '80% do lixo marinho é composto por plástico.')" style="background: #FFF3CD;"></button>
-            </div>
+            <div class="logo">Sustentabilidade 3D</div>
+            <ul class="nav-links">
+                <li onclick="mudarCor('#90EE90', 'A reciclagem de 1 tonelada de papel poupa 22 árvores!')">Curiosidade Verde</li>
+                <li onclick="mudarCor('#ADD8E6', 'Apenas 3% da água da Terra é doce.')">Curiosidade Azul</li>
+                <li onclick="mudarCor('#F5F5F5', 'Painéis solares podem durar mais de 25 anos.')">Curiosidade Off-White</li>
+            </ul>
         </nav>
     </header>
 
     <main>
-        <section id="planeta-container">
-            <div id="terra" onclick="expandirTerra()">
-                <img src="https://cdn-icons-png.flaticon.com/512/814/814513.png" alt="Planeta Terra" id="img-terra">
-                <div id="paises" class="escondido">
-                    <button onclick="mostrarSustentabilidade('Brasil', '78%')">Brasil</button>
-                    <button onclick="mostrarSustentabilidade('Suécia', '99%')">Suécia</button>
-                    <button onclick="mostrarSustentabilidade('Japão', '65%')">Japão</button>
+        <section id="hero">
+            <div id="container-planeta">
+                <div id="planeta" onclick="togglePlaneta()">
+                    <span id="instrucao">Clique em mim!</span>
+                    <div class="pais" style="top:30%; left:20%;" onclick="verStatus('Brasil', '80%')"></div>
+                    <div class="pais" style="top:40%; left:50%;" onclick="verStatus('Europa', '75%')"></div>
+                    <div class="pais" style="top:60%; left:70%;" onclick="verStatus('Ásia', '60%')"></div>
                 </div>
             </div>
-            <p id="info-pais">Clique no Planeta para explorar!</p>
+            <h1 id="titulo-principal">Futuro Sustentável: Algoritmo do Equilíbrio</h1>
+            <p id="curiosidade-texto">Clique nas cores do menu para descobrir segredos da sustentabilidade!</p>
         </section>
 
         <section class="conteudo">
-            <h1>Como ser Sustentável?</h1>
-            <h2>Pequenas mudanças no 3º ano para o resto da vida</h2>
+            <h2>O Desafio e a Solução</h2>
+            <p>A população cresce e os recursos são finitos. [cite: 56] A solução é usar a tecnologia para produzir de forma inteligente. [cite: 57]</p>
             
-            <div class="slide-texto">
-                <h3>O que é Sustentabilidade?</h3>
-                <ul>
-                    <li>Atender às necessidades do presente...</li>
-                    <li>Sem comprometer as futuras gerações.</li>
-                    <li>Baseado no tripé: Social, Econômico e Ambiental.</li>
-                </ul>
+            <div class="grid-cards">
+                <div class="card">
+                    <h3>Importância dos Dados</h3>
+                    <ul>
+                        <li>Sensores IoT medem umidade e energia em tempo real. [cite: 61]</li>
+                        <li>Decomposição do problema: Onde se gasta mais água? [cite: 62]</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Algoritmos do Bem</h3>
+                    <ul>
+                        <li>Logística Inteligente: Rotas curtas gastam menos combustível. [cite: 65, 66]</li>
+                        <li>Digital Twin: Testes virtuais antes da produção real. [cite: 69]</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Automação</h3>
+                    <ul>
+                        <li>Robôs com visão computacional para separar lixo. [cite: 71]</li>
+                        <li>Irrigação de precisão: Gota a gota por planta. [cite: 73]</li>
+                    </ul>
+                </div>
             </div>
-            
-            </section>
+        </section>
+
+        <footer>
+            <p>"O melhor algoritmo para o futuro é aquele que garante a existência das próximas gerações." [cite: 81]</p>
+            <p>Por: Anna Beatriz - 3D [cite: 51]</p>
+        </footer>
     </main>
 
     <script src="script.js"></script>

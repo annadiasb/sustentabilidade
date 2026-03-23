@@ -1,29 +1,29 @@
-// Função para o Planeta crescer e aparecer os países
-function expandirTerra() {
-    const terra = document.getElementById('img-terra');
-    const painelPaises = document.getElementById('paises');
+// Função para expandir/encolher o planeta
+function togglePlaneta() {
+    const planeta = document.getElementById('planeta');
+    const instrucao = document.getElementById('instrucao');
     
-    // Toggle (liga/desliga) a classe que aumenta o tamanho
-    terra.classList.toggle('terra-grande');
+    planeta.classList.toggle('expandido');
     
-    // Mostra ou esconde os botões dos países
-    if (painelPaises.classList.contains('escondido')) {
-        painelPaises.classList.remove('escondido');
+    // Remove o texto de instrução quando clica
+    if (planeta.classList.contains('expandido')) {
+        instrucao.style.display = 'none';
+    } else {
+        instrucao.style.display = 'block';
     }
 }
 
-// Função para mostrar a porcentagem de cada país
-function mostrarSustentabilidade(nome, porcentagem) {
-    const display = document.getElementById('info-pais');
-    display.innerHTML = `O <strong>${nome}</strong> tem um índice de sustentabilidade de <strong>${porcentagem}</strong>.`;
-    display.style.color = "#2d5a27"; // Verde escuro
+// Função para mostrar a porcentagem de sustentabilidade do país
+function verStatus(nome, porcentagem) {
+    // Impede que o clique no país feche o planeta
+    event.stopPropagation();
+    alert(`O país ${nome} tem um índice de sustentabilidade de ${porcentagem}!`);
 }
 
-// Função para o menu mudar a cor de fundo e mostrar curiosidade
+// Função para mudar a cor de fundo e mostrar curiosidade
 function mudarCor(cor, curiosidade) {
-    // Muda a cor do fundo do site todo
     document.body.style.backgroundColor = cor;
-    
-    // Mostra a curiosidade em um alerta (você pode mudar para um texto na página)
-    alert(curiosidade);
+    const textoCuriosidade = document.getElementById('curiosidade-texto');
+    textoCuriosidade.innerText = curiosidade;
+    textoCuriosidade.style.fontWeight = 'bold';
 }
